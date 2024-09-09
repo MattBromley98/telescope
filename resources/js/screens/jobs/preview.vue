@@ -71,6 +71,11 @@
                 </td>
             </tr>
 
+            <tr v-if="jobStatusClass(slotProps.entry.content.status) === 'danger'">
+                <td>Retry</td>
+                <td>Retry Failed Job</td>
+            </tr>
+
             <tr v-if="slotProps.entry.content.data.batchId">
                 <td class="table-fit text-muted">Batch</td>
                 <td>
