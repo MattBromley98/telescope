@@ -73,7 +73,7 @@
 
             <tr v-if="jobStatusClass(slotProps.entry.content.status) === 'danger'">
                 <td>Retry</td>
-                <td>Retry Failed Job</td>
+                <td><a :href="'/api/jobs/retry' + $route.params.id">Retry Failed Job</a></td>
             </tr>
 
             <tr v-if="slotProps.entry.content.data.batchId">
