@@ -132,7 +132,7 @@
             </related-entries>
         </div>
     </preview-screen>
-    <retry-modal :open="retryModalOpen"/>
+    <retry-modal :open="retryModalOpen" :json="entry.content.data"/>
 </template>
 
 <style scoped>
