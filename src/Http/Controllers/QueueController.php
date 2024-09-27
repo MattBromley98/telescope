@@ -39,6 +39,14 @@ class QueueController extends EntryController
     }
 
     /**
+     * Retries a entry with the given ID.
+     */
+    public function retry()
+    {
+
+    }
+
+    /**
      * The watcher class for the controller.
      *
      * @return string

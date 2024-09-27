@@ -1,9 +1,9 @@
 <script type="text/ecmascript-6">
-    import axios from 'axios';
     import StylesMixin from './../../mixins/entriesStyles';
 
     export default {
         components: {
+            'retry-modal': require('./../../components/RetryModal.vue').default
             'code-preview': require('./../../components/ExceptionCodePreview').default,
             'stack-trace': require('./../../components/Stacktrace').default
         },
@@ -13,12 +13,18 @@
             StylesMixin,
         ],
 
+        methods: {
+          retryJob(jobId) {
+              this.retryModalOpen = true;
+          }
+        },
 
         data() {
             return {
                 entry: null,
                 batch: [],
-                currentTab: 'data'
+                currentTab: 'data',
+                retryModalOpen: false
             };
         }
     }
@@ -73,7 +79,7 @@
 
             <tr v-if="jobStatusClass(slotProps.entry.content.status) === 'danger'">
                 <td>Retry</td>
-                <td><a :href="'/api/jobs/retry' + $route.params.id">Retry Failed Job</a></td>
+                <td><a @click="retryJob" :href="'/api/jobs/retry' + $route.params.id">Retry Failed Job</a></td>
             </tr>
 
             <tr v-if="slotProps.entry.content.data.batchId">
@@ -126,6 +132,7 @@
             </related-entries>
         </div>
     </preview-screen>
+    <retry-modal :open="retryModalOpen"/>
 </template>
 
 <style scoped>
