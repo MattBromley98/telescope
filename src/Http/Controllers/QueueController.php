@@ -45,7 +45,7 @@ class QueueController extends EntryController
     public function retry(Request $request)
     {
         $class = $request->get('jobType');
-        $classInstance = new $class();
+        $classInstance = new $class($request->get('payload'));
 
         $classInstance::deploy($request->get('payload'));
 
