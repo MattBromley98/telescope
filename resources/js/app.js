@@ -6,6 +6,7 @@ import VueRouter from 'vue-router';
 import VueJsonPretty from 'vue-json-pretty';
 import 'vue-json-pretty/lib/styles.css';
 import moment from 'moment-timezone';
+import JsonEditorVue from 'json-editor-vue'
 
 require('bootstrap');
 
@@ -16,6 +17,7 @@ if (token) {
 }
 
 Vue.use(VueRouter);
+Vue.use(JsonEditorVue);
 
 window.Popper = require('popper.js').default;
 
@@ -37,6 +39,7 @@ const router = new VueRouter({
 });
 
 Vue.component('vue-json-pretty', VueJsonPretty);
+Vue.component('json-editor-vue', JsonEditorVue);
 Vue.component('related-entries', require('./components/RelatedEntries.vue').default);
 Vue.component('index-screen', require('./components/IndexScreen.vue').default);
 Vue.component('preview-screen', require('./components/PreviewScreen.vue').default);

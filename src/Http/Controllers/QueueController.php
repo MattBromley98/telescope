@@ -2,6 +2,7 @@
 
 namespace Laravel\Telescope\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Laravel\Telescope\Contracts\EntriesRepository;
 use Laravel\Telescope\EntryType;
 use Laravel\Telescope\Storage\EntryQueryOptions;
@@ -41,9 +42,9 @@ class QueueController extends EntryController
     /**
      * Retries a entry with the given ID.
      */
-    public function retry()
+    public function retry(Request $request)
     {
-
+        dd($request);
     }
 
     /**

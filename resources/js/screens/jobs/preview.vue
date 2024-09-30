@@ -79,7 +79,7 @@
 
             <tr>
                 <td>Retry</td>
-                <td><button @click="retryJob">Retry Failed Job</button></td>
+                <td><button class="btn btn-primary" @click="retryJob">Retry Failed Job</button></td>
             </tr>
 
             <tr v-if="slotProps.entry.content.data.batchId">
@@ -124,6 +124,7 @@
                             :highlighted-line="slotProps.entry.content.exception.line">
                     </code-preview>
                 </div>
+                <retry-modal :open="retryModalOpen" :json="slotProps.entry.content.data"/>
             </div>
 
 
@@ -131,7 +132,6 @@
             <related-entries :entry="entry" :batch="batch">
             </related-entries>
         </div>
-        <retry-modal :open="retryModalOpen" :json="entry.content.data"/>
     </preview-screen>
 </template>
 

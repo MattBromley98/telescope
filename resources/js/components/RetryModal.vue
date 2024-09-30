@@ -17,29 +17,56 @@ export default {
 
     data() {
         return {
-            jsonContent: this.json ?? '{}'
+            jsonContent: this.json ?? '{test: true}'
         };
+    },
+
+    methods: {
+        redeployJob: {
+
+        }
     }
 }
 </script>
 
 <template>
     <div class="modal" v-if="open">
-        <json-editor
-            v-model="jsonContent">
+        <div class="inner-modal bg-white p-32">
+            <json-editor-vue
+                v-model="jsonContent"
+                class="jse-theme-dark">
 
-        </json-editor>
-        <a>Retry Job</a>
+            </json-editor-vue>
+            <div class="modal-buttons">
+                <a class="btn btn-primary">Retry Job</a>
+            </div>
+        </div>
     </div>
 </template>
 
 <style scoped>
+@import 'vanilla-jsoneditor/themes/jse-theme-dark.css';
 .modal {
-    background: black;
-    opacity: 40;
+    display: grid;
+    place-items: center;
+    visibility: visible;
+    background: #00000087;
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
+}
+
+.inner-modal {
+    z-index: 20;
+    opacity: 1;
+    background: white;
+    padding: 32px;
+}
+
+.modal-buttons {
+    display: grid;
+    place-items: end;
+    padding-top: 20px;
 }
 </style>
