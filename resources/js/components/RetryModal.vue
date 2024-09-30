@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-    <div class="bg-black opacity-40 fixed inset-0 w-full h-full">
+    <div class="modal">
         <json-editor
             v-model="jsonContent">
 
@@ -34,5 +34,12 @@ export default {
 </template>
 
 <style scoped>
-
+.modal {
+    background: black;
+    opacity: 40;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
 </style>

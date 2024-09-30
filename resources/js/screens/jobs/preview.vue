@@ -77,7 +77,7 @@
                 </td>
             </tr>
 
-            <tr v-if="jobStatusClass(slotProps.entry.content.status) === 'danger'">
+            <tr>
                 <td>Retry</td>
                 <td><button @click="retryJob">Retry Failed Job</button></td>
             </tr>
