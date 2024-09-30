@@ -1,4 +1,6 @@
 <script type="text/ecmascript-6">
+import axios from "axios";
+
 export default {
     components: {
         'json-editor': require('json-editor-vue').default
@@ -22,8 +24,10 @@ export default {
     },
 
     methods: {
-        redeployJob: {
-
+        redeployJob() {
+            axios.get(Telescope.basePath + '/telescope-api/jobs/retry').then(data => {
+                console.log(data);
+            })
         }
     }
 }
