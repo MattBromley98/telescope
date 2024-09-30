@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-    <div class="modal">
+    <div class="modal" v-if="open">
         <json-editor
             v-model="jsonContent">
 

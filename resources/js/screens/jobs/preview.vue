@@ -131,8 +131,8 @@
             <related-entries :entry="entry" :batch="batch">
             </related-entries>
         </div>
+        <retry-modal :open="retryModalOpen" :json="entry.content.data"/>
     </preview-screen>
-    <retry-modal :open="retryModalOpen" :json="entry.content.data"/>
 </template>
 
 <style scoped>
