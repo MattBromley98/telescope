@@ -3,7 +3,7 @@
 
     export default {
         components: {
-            'retry-modal': require('./../../components/RetryModal.vue').default
+            'retry-modal': require('./../../components/RetryModal.vue').default,
             'code-preview': require('./../../components/ExceptionCodePreview').default,
             'stack-trace': require('./../../components/Stacktrace').default
         },
