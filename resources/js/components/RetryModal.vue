@@ -14,35 +14,43 @@ export default {
         json: {
             type: String,
             default: '{}'
-        }
+        },
+        jobName: String
     },
 
     data() {
         return {
-            jsonContent: this.json ?? '{test: true}'
+            jsonContent: this.json ?? '{test: true}',
+            modalOpen: open ?? false
         };
     },
 
     methods: {
         redeployJob() {
-            axios.get(Telescope.basePath + '/telescope-api/jobs/retry').then(data => {
+            axios.post(Telescope.basePath + '/telescope-api/jobs/retry', {
+                payload: this.jsonContent,
+                jobType: this.jobName
+            }).then(data => {
                 console.log(data);
             })
+        },
+        closeModal() {
+            this.modalOpen = false;
         }
     }
 }
 </script>
 
 <template>
-    <div class="modal" v-if="open">
-        <div class="inner-modal bg-white p-32">
+    <div class="modal" v-if="modalOpen" @click="closeModal">
+        <div class="inner-modal bg-white p-32" @click.prevent>
             <json-editor-vue
                 v-model="jsonContent"
                 class="jse-theme-dark">
 
             </json-editor-vue>
             <div class="modal-buttons">
-                <a class="btn btn-primary">Retry Job</a>
+                <a @click="redeployJob" class="btn btn-primary">Retry Job</a>
             </div>
         </div>
     </div>
