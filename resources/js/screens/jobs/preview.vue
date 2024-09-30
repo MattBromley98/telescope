@@ -14,7 +14,7 @@
         ],
 
         methods: {
-          retryJob(jobId) {
+          retryJob() {
               this.retryModalOpen = true;
           }
         },
@@ -79,7 +79,7 @@
 
             <tr v-if="jobStatusClass(slotProps.entry.content.status) === 'danger'">
                 <td>Retry</td>
-                <td><a @click="retryJob" :href="'/api/jobs/retry' + $route.params.id">Retry Failed Job</a></td>
+                <td><button @click="retryJob">Retry Failed Job</button></td>
             </tr>
 
             <tr v-if="slotProps.entry.content.data.batchId">
