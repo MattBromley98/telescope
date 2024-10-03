@@ -7,7 +7,7 @@ export default {
     },
 
     props: {
-        open: {
+        modalOpen: {
             type: Boolean,
             default: false
         },
@@ -21,30 +21,22 @@ export default {
     data() {
         return {
             jsonContent: this.json ?? '',
-            modalOpen: this.open
         };
     },
 
     methods: {
         redeployJob() {
-            axios.post(Telescope.basePath + '/telescope-api/jobs/retry', {
+            axios.post(window.Telescope.basePath + '/telescope-api/jobs/retry', {
                 payload: this.jsonContent,
                 jobType: this.jobName
             }).then(data => {
                 console.log(data);
-                this.modalOpen = false;
             })
         },
         closeModal() {
-            this.modalOpen = false;
+            window.location.reload();
         }
     },
-
-    computed: {
-        isModalOpen: (open) => {
-            this.modalOpen = open;
-        }
-    }
 }
 </script>
 
