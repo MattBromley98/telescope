@@ -16,6 +16,7 @@
         methods: {
           retryJob() {
               this.retryModalOpen = true;
+              return true;
           }
         },
 
