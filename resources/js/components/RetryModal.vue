@@ -20,7 +20,7 @@ export default {
 
     data() {
         return {
-            jsonContent: this.json ?? '',
+            jsonContent: this.json?.data ?? '',
         };
     },
 

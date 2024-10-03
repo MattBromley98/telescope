@@ -45,9 +45,9 @@ class QueueController extends EntryController
     public function retry(Request $request)
     {
         $class = $request->get('jobType');
-        $class::dispatch($request->get('payload')['data']);
+        $class::dispatch($request->get('payload'));
 
-        return redirect()->to('/telescope/jobs')->with('success', 'Successfully redeployed job');
+        return json_encode(['success' => true]);
     }
 
     /**
