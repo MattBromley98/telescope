@@ -125,7 +125,7 @@
                             :highlighted-line="slotProps.entry.content.exception.line">
                     </code-preview>
                 </div>
-                <retry-modal :open="retryModalOpen" :json="slotProps.entry.content.data" :job-name="slotProps.entry.content.name"/>
+                <retry-modal :modal-open="retryModalOpen" :json="slotProps.entry.content.data" :job-name="slotProps.entry.content.name"/>
             </div>
 
 
