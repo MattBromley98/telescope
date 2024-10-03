@@ -42,7 +42,7 @@ export default {
 </script>
 
 <template>
-    <div class="modal" v-show="modalOpen" @click="closeModal">
+    <div class="modal" v-show="open" @click="closeModal">
         <div class="inner-modal bg-white p-32" @click.prevent>
             <json-editor-vue
                 v-model="jsonContent"
