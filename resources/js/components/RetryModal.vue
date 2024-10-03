@@ -26,22 +26,22 @@ export default {
 
     methods: {
         redeployJob() {
-            axios.post(window.Telescope.basePath + '/telescope-api/jobs/retry', {
+            axios.post(window.Telescope.basePath + '/jobs/retry', {
                 payload: this.jsonContent,
                 jobType: this.jobName
             }).then(data => {
-                console.log(data);
+                window.location = ''
             })
         },
         closeModal() {
-            window.location.reload();
+            window.location.replace(window.Telescope.basePath + '/jobs');
         }
     },
 }
 </script>
 
 <template>
-    <div class="modal" v-show="modalOpen" @click="closeModal">
+    <div class="modal" v-show="modalOpen" @click.self="closeModal">
         <div class="inner-modal bg-white p-32" @click.prevent>
             <json-editor-vue
                 v-model="jsonContent"

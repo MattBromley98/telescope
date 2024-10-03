@@ -64,6 +64,8 @@ return [
         ],
     ],
 
+    'retry-route' => env('TELESCOPE_RETRY_ROUTE', false),
+
     /*
     |--------------------------------------------------------------------------
     | Telescope Queue

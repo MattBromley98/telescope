@@ -25,8 +25,8 @@ Route::post('/telescope-api/notifications', 'NotificationsController@index');
 Route::get('/telescope-api/notifications/{telescopeEntryId}', 'NotificationsController@show');
 
 // Queue entries...
-Route::post('/telescope-api/jobs', 'QueueController@index');
-Route::post('/telescope-api/jobs/retry', 'QueueController@retry');
+Route::post('', 'QueueController@index');
+Route::post('/jobs/retry', 'QueueController@retry');
 Route::get('/telescope-api/jobs/{telescopeEntryId}', 'QueueController@show');
 
 // Queue Batches entries...

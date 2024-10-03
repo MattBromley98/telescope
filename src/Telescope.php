@@ -225,7 +225,6 @@ class Telescope
         return ! $request->is(
             collect([
                 'telescope-api*',
-                'vendor/telescope*',
                 (config('horizon.path') ?? 'horizon').'*',
                 'vendor/horizon*',
             ])
