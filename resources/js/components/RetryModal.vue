@@ -21,7 +21,7 @@ export default {
     data() {
         return {
             jsonContent: this.json ?? '',
-            modalOpen: this.open ?? false
+            modalOpen: this.open
         };
     },
 
@@ -32,17 +32,24 @@ export default {
                 jobType: this.jobName
             }).then(data => {
                 console.log(data);
+                this.modalOpen = false;
             })
         },
         closeModal() {
             this.modalOpen = false;
+        }
+    },
+
+    computed: {
+        isModalOpen: (open) => {
+            this.modalOpen = open;
         }
     }
 }
 </script>
 
 <template>
-    <div class="modal" v-show="open" @click="closeModal">
+    <div class="modal" v-show="modalOpen" @click="closeModal">
         <div class="inner-modal bg-white p-32" @click.prevent>
             <json-editor-vue
                 v-model="jsonContent"
@@ -74,6 +81,7 @@ export default {
     opacity: 1;
     background: white;
     padding: 32px;
+    overflow-y: scroll;
 }
 
 .modal-buttons {
