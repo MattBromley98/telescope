@@ -30,11 +30,11 @@ export default {
                 payload: this.jsonContent,
                 jobType: this.jobName
             }).then(data => {
-                window.location = ''
+                window.location.replace(window.Telescope.basePath + '/jobs');
             })
         },
         closeModal() {
-            window.location.replace(window.Telescope.basePath + '/jobs');
+            window.location.reload();
         }
     },
 }
@@ -49,7 +49,7 @@ export default {
 
             </json-editor-vue>
             <div class="modal-buttons">
-                <a @click="redeployJob" class="btn btn-primary">Retry Job</a>
+                <a @click.self="redeployJob" class="btn btn-primary">Retry Job</a>
             </div>
         </div>
     </div>
@@ -74,6 +74,7 @@ export default {
     background: white;
     padding: 32px;
     overflow-y: scroll;
+    min-width: 486px;
 }
 
 .modal-buttons {
