@@ -20,8 +20,8 @@ export default {
 
     data() {
         return {
-            jsonContent: this.json ?? '{test: true}',
-            modalOpen: open ?? false
+            jsonContent: this.json ?? '',
+            modalOpen: this.open ?? false
         };
     },
 
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <template>
-    <div class="modal" v-if="modalOpen" @click="closeModal">
+    <div class="modal" v-show="modalOpen" @click="closeModal">
         <div class="inner-modal bg-white p-32" @click.prevent>
             <json-editor-vue
                 v-model="jsonContent"
