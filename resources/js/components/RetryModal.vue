@@ -41,7 +41,7 @@ export default {
 </script>
 
 <template>
-    <div class="modal" v-show="modalOpen" @click.prevent="closeModal">
+    <div class="modal" v-show="modalOpen" @click="closeModal">
         <div class="inner-modal bg-white p-32" @click.prevent>
             <json-editor-vue
                 v-model="jsonContent"
@@ -49,7 +49,7 @@ export default {
 
             </json-editor-vue>
             <div class="modal-buttons">
-                <a @click.prevent="redeployJob" class="btn btn-primary">Retry Job</a>
+                <a @click="redeployJob" class="btn btn-primary">Retry Job</a>
             </div>
         </div>
     </div>

@@ -79,8 +79,8 @@
             </tr>
 
             <tr>
-                <td>Retry</td>
-                <td><button class="btn btn-primary" @click="retryJob">Retry Failed Job</button></td>
+                <td class="table-fit text-muted">Retry</td>
+                <td><button class="btn btn-primary" @click="retryJob">Retry Job</button></td>
             </tr>
 
             <tr v-if="slotProps.entry.content.data.batchId">
@@ -91,7 +91,6 @@
                     </router-link>
                 </td>
             </tr>
-
         </template>
 
         <div slot="after-attributes-card" slot-scope="slotProps">
