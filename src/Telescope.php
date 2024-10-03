@@ -229,9 +229,9 @@ class Telescope
                 'vendor/horizon*',
             ])
             ->merge(config('telescope.ignore_paths', []))
-            ->unless(is_null(config('telescope.path')), function ($paths) {
-                return $paths->prepend(config('telescope.path').'*');
-            })
+//            ->unless(is_null(config('telescope.path')), function ($paths) {
+//                return $paths->prepend(config('telescope.path').'*');
+//            })
             ->all()
         );
     }
