@@ -364,5 +364,7 @@
 }
 .status-select {
     border-radius: 99999px;
+    color: #4b5563;
+    font-size: .875rem;
 }
 </style>
