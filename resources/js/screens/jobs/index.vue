@@ -22,7 +22,9 @@
             <td>
                 <span :title="slotProps.entry.content.name">{{truncate(slotProps.entry.content.name, 68)}}</span><br>
                 <small class="text-muted">
-                    Connection: {{slotProps.entry.content.connection}} | Queue: {{slotProps.entry.content.queue}} | Tags: {{slotProps.entry.tags}}
+                    Connection: {{slotProps.entry.content.connection}}
+                    | Queue: {{slotProps.entry.content.queue}}
+                    | Tags: <li class="badge badge-info mr-1" v-for="tagItem in slotProps.entry.tags">{{tagItem}}</li>
                 </small>
             </td>
 
