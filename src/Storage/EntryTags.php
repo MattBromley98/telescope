@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class EntryTags extends Model
 {
-    public $table = 'telescope_entry_tags';
+    public $table = 'telescope_entries_tags';
 
     public function job(): HasOne
     {
