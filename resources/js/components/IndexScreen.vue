@@ -274,7 +274,7 @@
         <div class="card-header d-flex align-items-center justify-content-between">
             <h2 class="h6 m-0">{{this.title}}</h2>
 
-            <div class="w-100 status-area">
+            <div class="w-75 status-area">
                 <div class="form-control-with-icon w-25" v-if="!hideSearch && (tag || entries.length > 0)">
                     <div class="icon-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="icon">
@@ -286,7 +286,7 @@
                            placeholder="Search Tag" v-model="tag" @input.stop="search">
                 </div>
                 <div v-if="!hideSearch" class="w-100" @input.stop="search">
-                    <select v-model="status" class="form-control w-100">
+                    <select v-model="status" class="form-control status-select w-100">
                         <option value="">Select Status:</option>
                         <option value="pending">Pending</option>
                         <option value="failed">Failed</option>
@@ -361,5 +361,8 @@
 .status-area {
     display: flex;
     flex-direction: row-reverse;
+}
+.status-select {
+    border-radius: 99999px;
 }
 </style>
