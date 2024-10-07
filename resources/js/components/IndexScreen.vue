@@ -108,6 +108,7 @@
             loadEntries(after){
                 axios.post(Telescope.basePath + '/telescope-api/' + this.resource +
                         '?tag=' + this.tag +
+                        '&status=' + this.status +
                         '&before=' + this.lastEntryIndex +
                         '&take=' + this.entriesPerRequest +
                         '&family_hash=' + this.familyHash
@@ -134,6 +135,7 @@
                 this.newEntriesTimeout = setTimeout(() => {
                     axios.post(Telescope.basePath + '/telescope-api/' + this.resource +
                             '?tag=' + this.tag +
+                            '&status=' + this.status +
                             '&take=1' +
                             '&family_hash=' + this.familyHash
                     ).then(response => {
@@ -272,23 +274,25 @@
         <div class="card-header d-flex align-items-center justify-content-between">
             <h2 class="h6 m-0">{{this.title}}</h2>
 
-            <div class="form-control-with-icon w-25" v-if="!hideSearch && (tag || entries.length > 0)">
-                <div class="icon-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="icon">
-                        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <input type="text" class="form-control w-100"
-                       id="searchInput"
-                       placeholder="Search Tag" v-model="tag" @input.stop="search">
-            </div>
             <div>
-                <select v-model="status">
-                    <option value="">Select Status:</option>
-                    <option value="pending">Pending</option>
-                    <option value="failed">Failed</option>
-                    <option value="processed">Processed</option>
-                </select>
+                <div class="form-control-with-icon w-25" v-if="!hideSearch && (tag || entries.length > 0)">
+                    <div class="icon-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="icon">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <input type="text" class="form-control w-100"
+                           id="searchInput"
+                           placeholder="Search Tag" v-model="tag" @input.stop="search">
+                </div>
+                <div>
+                    <select v-model="status" class="form-control w-100">
+                        <option value="">Select Status:</option>
+                        <option value="pending">Pending</option>
+                        <option value="failed">Failed</option>
+                        <option value="processed">Processed</option>
+                    </select>
+                </div>
             </div>
         </div>
 

@@ -49,6 +49,7 @@ export default {
 
             </json-editor-vue>
             <div class="modal-buttons">
+                <a @click.self="closeModal" class="btn btn-secondary">Cancel</a>
                 <a @click.self="redeployJob" class="btn btn-primary">Retry Job</a>
             </div>
         </div>
@@ -73,13 +74,13 @@ export default {
     opacity: 1;
     background: #1f2937;
     padding: 32px;
-    overflow-y: scroll;
+    overflow-y: auto;
     min-width: 486px;
     border-radius: 5px 5px 0 0;
 }
 
 .modal-buttons {
-    display: grid;
+    display: flex;
     place-items: end;
     padding-top: 20px;
 }
