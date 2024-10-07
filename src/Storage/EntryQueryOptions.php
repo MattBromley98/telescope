@@ -66,6 +66,7 @@ class EntryQueryOptions
         return (new static)
                 ->batchId($request->batch_id)
                 ->uuids($request->uuids)
+                ->status($request->status)
                 ->beforeSequence($request->before)
                 ->tag($request->tag)
                 ->familyHash($request->family_hash)

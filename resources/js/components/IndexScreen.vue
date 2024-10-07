@@ -285,7 +285,7 @@
                            id="searchInput"
                            placeholder="Search Tag" v-model="tag" @input.stop="search">
                 </div>
-                <div>
+                <div v-if="!hideSearch" class="w-100">
                     <select v-model="status" class="form-control w-25">
                         <option value="">Select Status:</option>
                         <option value="pending">Pending</option>
@@ -360,5 +360,6 @@
 <style>
 .status-area {
     display: flex;
+    flex-flow: row-reverse;
 }
 </style>

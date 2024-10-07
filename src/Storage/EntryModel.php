@@ -212,11 +212,9 @@ class EntryModel extends Model
 
     public function whereStatus($query, EntryQueryOptions $options)
     {
-        if(!$options->status) {
-            return $this;
-        }
-
-        $query->whereJsonContains('content', ['status' => $options->status]);
+        $query->when($options->status, function ($query, $status) {
+            return $query->whereJsonContains('content', ['status' => $status]);
+        });
 
         return $this;
     }
