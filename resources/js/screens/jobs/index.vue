@@ -22,7 +22,7 @@
             <td>
                 <span :title="slotProps.entry.content.name">{{truncate(slotProps.entry.content.name, 68)}}</span><br>
                 <small class="text-muted">
-                    Connection: {{slotProps.entry.content.connection}} | Queue: {{slotProps.entry.content.queue}}
+                    Connection: {{slotProps.entry.content.connection}} | Queue: {{slotProps.entry.content.queue}} | Tags: {{slotProps.entry.tags}}
                 </small>
             </td>
 
