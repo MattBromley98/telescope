@@ -4,6 +4,7 @@ namespace Laravel\Telescope\Storage;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Telescope\Database\Factories\EntryModelFactory;
 
 class EntryModel extends Model
@@ -201,5 +202,10 @@ class EntryModel extends Model
     public static function newFactory()
     {
         return EntryModelFactory::new();
+    }
+
+    public function tags(): HasMany
+    {
+        return $this->hasMany(EntryTags::class, 'entry_uuid', 'uuid');
     }
 }

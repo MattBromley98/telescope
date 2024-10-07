@@ -92,6 +92,7 @@ class DatabaseEntriesRepository implements Contract, ClearableRepository, Prunab
         return EntryModel::on($this->connection)
             ->withTelescopeOptions($type, $options)
             ->take($options->limit)
+            ->with('tags')
             ->orderByDesc('sequence')
             ->get()->reject(function ($entry) {
                 return ! is_array($entry->content);
