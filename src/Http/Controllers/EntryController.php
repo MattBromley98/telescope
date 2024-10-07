@@ -81,4 +81,9 @@ abstract class EntryController extends Controller
 
         return 'enabled';
     }
+
+    public function queues(Request $request)
+    {
+
+    }
 }

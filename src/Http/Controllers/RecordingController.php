@@ -4,6 +4,7 @@ namespace Laravel\Telescope\Http\Controllers;
 
 use Illuminate\Contracts\Cache\Repository as CacheRepository;
 use Illuminate\Routing\Controller;
+use Psr\SimpleCache\InvalidArgumentException;
 
 class RecordingController extends Controller
 {
@@ -29,6 +30,7 @@ class RecordingController extends Controller
      * Toggle recording.
      *
      * @return void
+     * @throws InvalidArgumentException
      */
     public function toggle()
     {
