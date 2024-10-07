@@ -35,7 +35,7 @@ class EntryQueryOptions
     public $beforeSequence;
 
     /**
-     * The list of UUIDs of entries tor retrieve.
+     * The list of UUIDs of entries to retrieve.
      *
      * @var mixed
      */
@@ -47,6 +47,13 @@ class EntryQueryOptions
      * @var int
      */
     public $limit = 50;
+
+    /**
+     * The list of Job Statuses to retrieve.
+     *
+     * @var string
+     */
+    public $status = '';
 
     /**
      * Create new entry query options from the incoming request.
@@ -150,6 +157,19 @@ class EntryQueryOptions
     public function limit(int $limit)
     {
         $this->limit = $limit;
+
+        return $this;
+    }
+
+    /**
+     * Set the status of entries that should be retrieved.
+     *
+     * @param string|null $status
+     * @return $this
+     */
+    public function status(?string $status)
+    {
+        $this->status = $status;
 
         return $this;
     }

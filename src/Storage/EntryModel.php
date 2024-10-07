@@ -68,6 +68,7 @@ class EntryModel extends Model
         $this->whereType($query, $type)
                 ->whereBatchId($query, $options)
                 ->whereTag($query, $options)
+                ->whereStatus($query, $options)
                 ->whereFamilyHash($query, $options)
                 ->whereBeforeSequence($query, $options)
                 ->filter($query, $options);
@@ -207,5 +208,16 @@ class EntryModel extends Model
     public function tags(): HasMany
     {
         return $this->hasMany(EntryTags::class, 'entry_uuid', 'uuid');
+    }
+
+    public function whereStatus($query, EntryQueryOptions $options)
+    {
+        if(!$options->status) {
+            return $this;
+        }
+
+        $query->whereJsonContains('content', ['status' => $options->status]);
+
+        return $this;
     }
 }
