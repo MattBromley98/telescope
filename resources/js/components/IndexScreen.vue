@@ -285,7 +285,7 @@
                            id="searchInput"
                            placeholder="Search Tag" v-model="tag" @input.stop="search">
                 </div>
-                <div v-if="!hideSearch" class="w-100" @input.stop="search">
+                <div v-if="!hideSearch" class="w-75" @input.stop="search">
                     <select v-model="status" class="form-control status-select w-100">
                         <option value="">Select Status:</option>
                         <option value="pending">Pending</option>
