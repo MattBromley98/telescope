@@ -67,6 +67,7 @@
         <div class="row mt-4">
             <div class="col-2 sidebar">
                 <ul class="nav flex-column">
+                    <?php if(config('telescope.enable-routes.requests')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/requests" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -75,6 +76,8 @@
                             <span>Requests</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.commands')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/commands" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -83,6 +86,8 @@
                             <span>Commands</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.schedule')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/schedule" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -91,6 +96,8 @@
                             <span>Schedule</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.jobs')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/jobs" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -99,8 +106,8 @@
                             <span>Jobs</span>
                         </router-link>
                     </li>
-
-
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.batches')):?>
                     <li class="nav-item mt-3">
                         <router-link active-class="active" to="/batches" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -109,6 +116,8 @@
                             <span>Batches</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.cache')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/cache" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -118,6 +127,8 @@
                             <span>Cache</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.dumps')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/dumps" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -126,6 +137,8 @@
                             <span>Dumps</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.events')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/events" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -134,6 +147,8 @@
                             <span>Events</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.exceptions')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/exceptions" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -142,6 +157,8 @@
                             <span>Exceptions</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.gates')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/gates" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -150,6 +167,8 @@
                             <span>Gates</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.client-requests')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/client-requests" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -158,6 +177,8 @@
                             <span>HTTP Client</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.logs')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/logs" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -167,6 +188,8 @@
                             <span>Logs</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.mail')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/mail" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -176,6 +199,8 @@
                             <span>Mail</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.models')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/models" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -184,6 +209,8 @@
                             <span>Models</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.notifications')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/notifications" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -193,6 +220,8 @@
                             <span>Notifications</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.queries')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/queries" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -201,6 +230,8 @@
                             <span>Queries</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.redis')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/redis" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -209,6 +240,8 @@
                             <span>Redis</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
+                    <?php if(config('telescope.enable-routes.views')):?>
                     <li class="nav-item">
                         <router-link active-class="active" to="/views" class="nav-link d-flex align-items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -217,6 +250,7 @@
                             <span>Views</span>
                         </router-link>
                     </li>
+                    <?php endif;?>
                 </ul>
             </div>
 

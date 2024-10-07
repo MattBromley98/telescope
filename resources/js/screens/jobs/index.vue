@@ -24,7 +24,7 @@
                 <small class="text-muted">
                     Connection: {{slotProps.entry.content.connection}}
                     | Queue: {{slotProps.entry.content.queue}}
-                    | Tags: <li class="badge badge-info mr-1" v-for="tagItem in slotProps.entry.tags">{{tagItem}}</li>
+                    | Tags: <a class="badge badge-info mr-1" v-for="tagItem in slotProps.entry.tags">{{tagItem}}</a>
                 </small>
             </td>
 

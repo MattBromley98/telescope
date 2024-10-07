@@ -123,6 +123,23 @@ return [
         //
     ],
 
+    'enable-routes' => [
+      'requests' => true,
+      'commands' => true,
+      'schedule' => true,
+      'jobs' => true,
+      'queues' => true,
+      'batches' => true,
+      'dumps' => true,
+      'events' => true,
+      'exceptions' => true,
+      'gates' => true,
+      'logs' => true,
+      'mail' => true,
+      'notifications' => true,
+      'redis' => true
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Telescope Watchers
