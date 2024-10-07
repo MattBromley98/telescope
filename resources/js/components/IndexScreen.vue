@@ -15,6 +15,7 @@
         data() {
             return {
                 tag: '',
+                status: '',
                 familyHash: '',
                 entries: [],
                 ready: false,
@@ -180,7 +181,7 @@
 
                     clearTimeout(this.newEntriesTimeout);
 
-                    this.$router.push({query: _.assign({}, this.$route.query, {tag: this.tag})});
+                    this.$router.push({query: _.assign({}, this.$route.query, {tag: this.tag, status: this.status})});
                 });
             },
 
@@ -280,6 +281,14 @@
                 <input type="text" class="form-control w-100"
                        id="searchInput"
                        placeholder="Search Tag" v-model="tag" @input.stop="search">
+            </div>
+            <div>
+                <select v-model="status">
+                    <option value="">Select Status:</option>
+                    <option value="pending">Pending</option>
+                    <option value="failed">Failed</option>
+                    <option value="processed">Processed</option>
+                </select>
             </div>
         </div>
 

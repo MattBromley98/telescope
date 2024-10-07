@@ -42,7 +42,7 @@ export default {
 
 <template>
     <div class="modal" v-show="modalOpen" @click.self="closeModal">
-        <div class="inner-modal bg-white p-32" @click.prevent>
+        <div class="inner-modal p-32" @click.prevent>
             <json-editor-vue
                 v-model="jsonContent"
                 class="jse-theme-dark">
@@ -71,10 +71,11 @@ export default {
 .inner-modal {
     z-index: 20;
     opacity: 1;
-    background: white;
+    background: #1f2937;
     padding: 32px;
     overflow-y: scroll;
     min-width: 486px;
+    border-radius: 5px 5px 0 0;
 }
 
 .modal-buttons {
