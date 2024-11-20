@@ -213,7 +213,7 @@ class EntryModel extends Model
 
     public function whereStatus($query, EntryQueryOptions $options)
     {
-        $query->when($options->status, function (\Illuminate\Database\Query\Builder $query, $status) {
+        $query->when($options->status, function ($query, $status) {
             $query->where('type','=',  'job');
             $query->whereLike('content', '%"status":"processed"%');
             return $query;
