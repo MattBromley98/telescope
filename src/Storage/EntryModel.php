@@ -215,7 +215,7 @@ class EntryModel extends Model
     {
         $query->when($options->status, function ($query, $status) {
             $query->where('type','=',  'job');
-            $query->whereLike('content', '%"status":"' . $status . '"%');
+            $query->whereLike('content', '%"status":"' . strtolower($status) . '"%');
             return $query;
         });
 
