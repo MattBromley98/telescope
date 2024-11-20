@@ -5,6 +5,7 @@ namespace Laravel\Telescope\Storage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Schema\Builder;
 use Laravel\Telescope\Database\Factories\EntryModelFactory;
 
 class EntryModel extends Model
@@ -212,8 +213,10 @@ class EntryModel extends Model
 
     public function whereStatus($query, EntryQueryOptions $options)
     {
-        $query->when($options->status, function ($query, $status) {
-            return $query->whereJsonContains('content', ['status' => $status]);
+        $query->when($options->status, function (\Illuminate\Database\Query\Builder $query, $status) {
+            $query->where('type','=',  'job');
+            $query->whereLike('content', '%"status":"processed"%');
+            return $query;
         });
 
         return $this;
