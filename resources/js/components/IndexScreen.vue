@@ -287,7 +287,7 @@
                 </div>
                 <div v-if="!hideSearch" class="w-50" @input.stop="search">
                     <select v-model="status" class="form-control status-select w-100">
-                        <option value="" style="color: #4b5563;">Select Status:</option>
+                        <option value="" style="color: #4b5563;">Select Status</option>
                         <option value="pending">Pending</option>
                         <option value="failed">Failed</option>
                         <option value="processed">Processed</option>
